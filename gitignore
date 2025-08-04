@@ -1,0 +1,7 @@
+/build
+/.idea
+*.iml
+*.class
+/out
+*.log
+.DS_Store

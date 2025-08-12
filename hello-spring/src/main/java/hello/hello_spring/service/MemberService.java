@@ -28,6 +28,21 @@ public class MemberService {
         return member.getId();
     }
 
+    /*// 직접 메서드 호출 시간 찍어보는 방법
+    public Long join(Member member) {
+        long start = System.currentTimeMillis();
+
+        try {
+            validateDuplicateMember(member);
+            memberRepository.save(member);
+            return member.getId();
+        } finally {
+            long finish = System.currentTimeMillis();
+            long timeMs = finish - start;
+            System.out.println("join = " + timeMs + "ms");
+        }
+    }*/
+
     private void validateDuplicateMember(Member member) {
         //같은 이름이 있는 중복 회원X
         memberRepository.findByName(member.getName()) // -> Optional타입

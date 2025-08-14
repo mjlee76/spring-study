@@ -18,6 +18,7 @@ public class MemberController {
     @Autowired  // 생성자 주입: Spring 컨테이너에 있는 memberService를 가져와서 자동으로 연결해줌
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
+        System.out.println("memberService = " + memberService.getClass()); //MemberService에 AOP될때 프록시 적용되는지 찍어보기
     }
 
     @GetMapping("/members/new")
